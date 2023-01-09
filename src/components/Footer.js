@@ -61,7 +61,7 @@ const Footer = () => {
                 <section>
                   <ul className="menu-list">
                     <li>
-                      <Link className="navbar-item" to="/blog">
+                      <Link className="navbar-item" to="/event">
                         Latest Stories
                       </Link>
                     </li>

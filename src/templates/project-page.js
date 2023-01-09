@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
+import { gatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import Testimonials from "../components/Testimonials";
@@ -23,7 +23,6 @@ export const ProjectPageTemplate = ({
 }) => {
   const heroImage = getImage(image) || image;
   const fullWidthImage = getImage(fullImage) || fullImage;
-
   return (
     <div className="content">
       <FullWidthImage img={heroImage} title={title} />
@@ -206,7 +205,6 @@ export const ProjectPageQuery = graphql`
           author
           quote
         }
-
         full_image {
           childImageSharp {
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
