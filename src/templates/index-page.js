@@ -59,7 +59,7 @@ export const IndexPageTemplate = ({
                     <h3 className="has-text-weight-semibold is-size-2">
                       Latest stories
                     </h3>
-                    <EventRoll />
+                    {/* <EventRoll /> */}
                     <div className="column is-12 has-text-centered">
                       <Link className="btn" to="/event">
                         Read more
@@ -137,7 +137,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(width: 400, quality: 64, layout: CONSTRAINED)
               }
             }
             text

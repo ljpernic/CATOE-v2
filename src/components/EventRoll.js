@@ -7,7 +7,7 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 const EventRollTemplate = (props) => {
   
   const { edges: posts } = props.data.allMarkdownRemark;
-
+  console.log(`props.data.allMarkdownRemark: ` + JSON.stringify(props.data.allMarkdownRemark))
   return (
     <div className="columns is-multiline">
       {posts &&
@@ -21,6 +21,7 @@ const EventRollTemplate = (props) => {
               <header>
                 {post?.frontmatter?.featuredimage && (
                   <div className="featured-thumbnail">
+                    {console.log(post.frontmatter.featuredimage)}
                     <PreviewCompatibleImage
                       imageInfo={{
                         image: post.frontmatter.featuredimage,
@@ -28,9 +29,9 @@ const EventRollTemplate = (props) => {
                         width:
                           post.frontmatter.featuredimage.childImageSharp
                             .gatsbyImageData.width,
-                        height:
-                          post.frontmatter.featuredimage.childImageSharp
-                            .gatsbyImageData.height,
+                        // height:
+                        //   post.frontmatter.featuredimage.childImageSharp
+                        //     .gatsbyImageData.height,
                       }}
                     />
                   </div>
@@ -93,16 +94,7 @@ export default function EventRoll() {
                   templateKey
                   date(formatString: "MMMM DD, YYYY")
                   featuredpost
-                  featuredimage {
-                    childImageSharp {
-                      gatsbyImageData(
-                        width: 120
-                        quality: 100
-                        layout: CONSTRAINED
-                      )
-
-                    }
-                  }
+                  featuredimage
                 }
               }
             }
